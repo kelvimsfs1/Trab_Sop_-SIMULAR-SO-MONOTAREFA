@@ -1,4 +1,4 @@
-''' arquivo = open('arquivo.txt','r')
+''' arquivo = open('arquivo.txt','r') f
     nome = arquivo.read()
     teste = [''] * (len(nome))
     executar = 1
