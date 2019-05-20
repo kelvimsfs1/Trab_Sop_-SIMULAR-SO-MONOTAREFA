@@ -1,0 +1,102 @@
+''' arquivo = open('arquivo.txt','r')
+    nome = arquivo.read()
+    teste = [''] * (len(nome))
+    executar = 1
+    exucacaotoatal = 0
+    totaldacpu = 0
+    totales = 0
+    tempoespera = 0
+    import time
+    import os
+
+    for i in range(len(nome)):
+
+     teste = nome.split(" ")
+     processo = [''] * (len(teste))
+     compartimento = [''] * (len(teste))
+     tempo = [0] * (len(teste))
+
+     for i in range(len(teste)):
+      if teste[i] == "p1" or teste[i] == "p2" or teste[i] == "p3" or teste[i] == "p4":
+         processo[i] = teste[i]
+
+     processo.sort()
+     while processo[0] == '':
+         del processo[0]
+
+     proxlivre =0
+     for i in range(len(compartimento)):
+
+        if teste [i] == "cpu" or teste[i] == "es":
+             if compartimento[proxlivre] == '':
+                 compartimento[proxlivre] = teste[i]
+                 proxlivre += 1
+
+     for i in range(len(compartimento)):
+         if compartimento[i] == '':
+             break
+     del compartimento[i:]
+
+     for i in range (len(teste)):
+             if teste[i] == '2':
+                 tempo[i] = 2
+
+     for i in range (len(teste)):
+             if teste[i] == '3':
+                 tempo[i] = 3
+
+     for i in range (len(teste)):
+             if teste[i] == '4':
+                 tempo[i] = 4
+
+     tempo.sort()
+     while tempo[0] == 0:
+        del tempo[0]
+
+
+
+    while executar == 1:
+        print("Tecle 1 para executar o processo")
+        executar = int(input())
+        for i in range(len(processo)):
+             x = 1
+             l = tempo[i]
+             while x:
+                print('\n')
+                print("Simulador SO Monotarefa")
+                print("Executanto o processo: %s" %(processo[i]))
+                print("Tipo do processo: %s" %(compartimento[i]))
+                print("Tempo estimado de execução: %d" %(l))
+                print("Tempo restante: %d" %(tempo[i]))
+                print('\n')
+                time.sleep(1)
+                tempo[i] = tempo[i] - 1
+                # RECOMENDO EXECUTAR O PROGRAMA NO TERMINAL PARA MELHOR VISUALIZAÇÃO DO PROGRAMA DEVIDO A BIBLIOTECA OS
+                os.system('cls')
+                if tempo[i] == 0:
+                    break
+
+
+             exucacaotoatal = exucacaotoatal + l
+             if compartimento[i] == "cpu":
+                    totaldacpu = totaldacpu + l
+             else:
+                    totales = totales + l
+
+             tempoespera = exucacaotoatal / (len(processo))
+
+
+
+
+
+
+        arquivo = open('saida.txt', 'w')
+        arquivo.write("Tempo total de execução: %d  \n " %(exucacaotoatal))
+        arquivo.write("Tempo total de execução processos CPU: %d \n " % (totaldacpu))
+        arquivo.write("Tempo total de execução processos ES: %d \n" % (totales))
+        arquivo.write("Tempo de espera médio dos processos: %d \n" % (tempoespera))
+        arquivo.close()
+
+        n = open('saida.txt', 'r')
+        t = n.read()
+        print(t) '''
