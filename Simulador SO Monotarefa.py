@@ -1,4 +1,5 @@
-''' # Abrindo o arquivo de texto a ser lido.
+    ´´´ python
+    # Abrindo o arquivo de texto a ser lido.
     abrindoarq = open('arquivo.txt','r')
     # aplicando o metodo read para ler o arquivo.
     metodoread = abrindoarq.read()
@@ -143,4 +144,5 @@
     # Por fim, fecho a edição do arquivo, abro ele com o método read e mostro o resultado em tela.
     n = open('saida.txt', 'r')
     t = n.read()
-    print(t) '''
+    print(t) 
+    ´´´
