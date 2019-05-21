@@ -1,4 +1,4 @@
-    ´´´ python
+    ´´´ 
     # Abrindo o arquivo de texto a ser lido.
     abrindoarq = open('arquivo.txt','r')
     # aplicando o metodo read para ler o arquivo.
